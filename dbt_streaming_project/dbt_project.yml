@@ -1,0 +1,11 @@
+name: dbt_streaming_project
+version: '1.0'
+profile: dbt_streaming_project
+config-version: 2
+
+default-paths:
+  models: models
+  data-paths: data
+  seeds-paths: seeds
+  snapshots-paths: snapshots
+  tests-paths: tests

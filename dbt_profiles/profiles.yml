@@ -1,0 +1,11 @@
+dbt_streaming_project:
+  outputs:
+    dev:
+      type: risingwave
+      host: risingwave
+      user: root
+      pass: ""
+      dbname: dev
+      port: 4566
+      schema: public
+  target: dev
