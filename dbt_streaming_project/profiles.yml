@@ -1,0 +1,12 @@
+dbt_streaming_project:
+  outputs:
+    dev:
+      type: risingwave
+      host: localhost
+      user: root
+      pass: ""
+      dbname: dev
+      port: 4566
+      schema: public
+      threads: 1
+  target: dev

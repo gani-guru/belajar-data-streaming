@@ -1,6 +1,0 @@
-version: 2
-sources:
-  - name: kafka
-    tables:
-      - name: mysqlcdc_staging_smile5_20260212_asset_types
-        identifier: "mysqlcdc.staging_smile5_20260212.asset_types"

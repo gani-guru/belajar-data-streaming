@@ -1,0 +1,107 @@
+[0m02:15:51.023246 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1755ad8a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1755d91310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1755b0bb90>]}
+
+
+============================== 02:15:51.209199 | 1d4fd244-68ae-4ed6-b01f-f93c54791715 ==============================
+[0m02:15:51.209199 [info ] [MainThread]: Running with dbt=1.11.11
+[0m02:15:51.212207 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'log_path': '/usr/app/logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'use_experimental_parser': 'False', 'printer_width': '80', 'no_print': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'log_cache_events': 'False', 'fail_fast': 'False', 'version_check': 'True', 'quiet': 'False', 'write_json': 'True', 'empty': 'None', 'invocation_command': 'dbt debug --profiles-dir /root/.dbt', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'profiles_dir': '/root/.dbt', 'cache_selected_only': 'False', 'static_parser': 'True'}
+[0m02:15:51.401283 [info ] [MainThread]: dbt version: 1.11.11
+[0m02:15:51.403596 [info ] [MainThread]: python version: 3.11.15
+[0m02:15:51.405457 [info ] [MainThread]: python path: /usr/local/bin/python3.11
+[0m02:15:51.407287 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.41
+[0m02:15:51.511097 [info ] [MainThread]: Using profiles dir at /root/.dbt
+[0m02:15:51.512883 [info ] [MainThread]: Using profiles.yml file at /root/.dbt/profiles.yml
+[0m02:15:51.514797 [info ] [MainThread]: Using dbt_project.yml file at /usr/app/dbt_project.yml
+[0m02:15:51.516817 [info ] [MainThread]: adapter type: risingwave
+[0m02:15:51.518504 [info ] [MainThread]: adapter version: 1.11.7
+[0m02:15:51.665718 [info ] [MainThread]: Configuration:
+[0m02:15:51.667530 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m02:15:51.669526 [info ] [MainThread]:   dbt_project.yml file [[31mERROR invalid[0m]
+[0m02:15:51.671559 [info ] [MainThread]: Required dependencies:
+[0m02:15:51.673372 [debug] [MainThread]: Executing "git --help"
+[0m02:15:51.676691 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m02:15:51.678469 [info ] [MainThread]: Connection:
+[0m02:15:51.680257 [info ] [MainThread]:   host: risingwave
+[0m02:15:51.681967 [info ] [MainThread]:   port: 4566
+[0m02:15:51.683856 [info ] [MainThread]:   user: root
+[0m02:15:51.685769 [info ] [MainThread]:   database: dev
+[0m02:15:51.687583 [info ] [MainThread]:   schema: public
+[0m02:15:51.689286 [info ] [MainThread]:   sslmode: None
+[0m02:15:51.691109 [info ] [MainThread]:   keepalives_idle: 0
+[0m02:15:51.693348 [info ] [MainThread]:   connect_timeout: 10
+[0m02:15:51.696379 [info ] [MainThread]:   retries: 1
+[0m02:15:51.698788 [info ] [MainThread]: Registered adapter: risingwave=1.11.7
+[0m02:15:52.140111 [debug] [MainThread]: Acquiring new risingwave connection 'debug'
+[0m02:15:52.182269 [debug] [MainThread]: Using risingwave connection "debug"
+[0m02:15:52.184011 [debug] [MainThread]: On debug: select 1 as id
+[0m02:15:52.185525 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m02:16:10.087179 [debug] [MainThread]: SQL status: SELECT 1 in 17.906 seconds
+[0m02:16:10.090160 [debug] [MainThread]: On debug: Close
+[0m02:16:10.198211 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m02:16:10.200115 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m02:16:10.201880 [info ] [MainThread]: Project loading failed for the following reason:
+Runtime Error
+  at path []: Additional properties are not allowed ('default-paths' was unexpected)
+
+Error encountered in /usr/app/dbt_project.yml
+
+
+[0m02:16:10.203641 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH: "git"
+
+[0m02:16:10.595674 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 19.812403, "process_in_blocks": "4784", "process_kernel_time": 0.756331, "process_mem_max_rss": "118920", "process_out_blocks": "3216", "process_user_time": 3.697622}
+[0m02:16:10.598506 [debug] [MainThread]: Command `dbt debug` failed at 02:16:10.598096 after 19.82 seconds
+[0m02:16:10.601227 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m02:16:10.603848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1755b6f990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1758a5cfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b17547a9750>]}
+[0m02:16:10.606982 [debug] [MainThread]: Flushing usage events
+[0m02:16:11.907779 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:30:17.545376 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731e752fca10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731e722c4590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731e72502890>]}
+
+
+============================== 02:30:17.552865 | 8f5344db-6374-400e-b036-3ba2f86570cf ==============================
+[0m02:30:17.552865 [info ] [MainThread]: Running with dbt=1.11.11
+[0m02:30:17.555835 [debug] [MainThread]: running dbt with arguments {'log_path': '/usr/app/logs', 'partial_parse': 'True', 'version_check': 'True', 'profiles_dir': '/root/.dbt', 'use_colors': 'True', 'quiet': 'False', 'no_print': 'None', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt debug --profiles-dir /root/.dbt', 'static_parser': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'target_path': 'None', 'printer_width': '80', 'introspect': 'True', 'log_format': 'default', 'debug': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False'}
+[0m02:30:17.574848 [info ] [MainThread]: dbt version: 1.11.11
+[0m02:30:17.576610 [info ] [MainThread]: python version: 3.11.15
+[0m02:30:17.578984 [info ] [MainThread]: python path: /usr/local/bin/python3.11
+[0m02:30:17.581010 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.41
+[0m02:30:17.693810 [info ] [MainThread]: Using profiles dir at /root/.dbt
+[0m02:30:17.695733 [info ] [MainThread]: Using profiles.yml file at /root/.dbt/profiles.yml
+[0m02:30:17.697495 [info ] [MainThread]: Using dbt_project.yml file at /usr/app/dbt_project.yml
+[0m02:30:17.699612 [info ] [MainThread]: adapter type: risingwave
+[0m02:30:17.701328 [info ] [MainThread]: adapter version: 1.11.7
+[0m02:30:17.868987 [info ] [MainThread]: Configuration:
+[0m02:30:17.870996 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m02:30:17.872927 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m02:30:17.874995 [info ] [MainThread]: Required dependencies:
+[0m02:30:17.877435 [debug] [MainThread]: Executing "git --help"
+[0m02:30:17.881998 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m02:30:17.884001 [info ] [MainThread]: Connection:
+[0m02:30:17.885819 [info ] [MainThread]:   host: risingwave
+[0m02:30:17.887610 [info ] [MainThread]:   port: 4566
+[0m02:30:17.889220 [info ] [MainThread]:   user: root
+[0m02:30:17.890995 [info ] [MainThread]:   database: dev
+[0m02:30:17.892650 [info ] [MainThread]:   schema: public
+[0m02:30:17.895327 [info ] [MainThread]:   sslmode: None
+[0m02:30:17.897409 [info ] [MainThread]:   keepalives_idle: 0
+[0m02:30:17.899599 [info ] [MainThread]:   connect_timeout: 10
+[0m02:30:17.901389 [info ] [MainThread]:   retries: 1
+[0m02:30:17.903523 [info ] [MainThread]: Registered adapter: risingwave=1.11.7
+[0m02:30:18.079412 [debug] [MainThread]: Acquiring new risingwave connection 'debug'
+[0m02:30:19.191575 [debug] [MainThread]: Using risingwave connection "debug"
+[0m02:30:19.193373 [debug] [MainThread]: On debug: select 1 as id
+[0m02:30:19.195235 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m02:30:19.203284 [debug] [MainThread]: SQL status: SELECT 1 in 0.008 seconds
+[0m02:30:19.205897 [debug] [MainThread]: On debug: Close
+[0m02:30:19.207877 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m02:30:19.210562 [info ] [MainThread]: [31m1 check failed:[0m
+[0m02:30:19.212534 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH: "git"
+
+[0m02:30:19.216372 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.795353, "process_in_blocks": "0", "process_kernel_time": 0.952477, "process_mem_max_rss": "119036", "process_out_blocks": "0", "process_user_time": 3.085545}
+[0m02:30:19.218348 [debug] [MainThread]: Command `dbt debug` failed at 02:30:19.218042 after 1.80 seconds
+[0m02:30:19.219967 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m02:30:19.221598 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731e72205ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731e721988d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731e76d4d1d0>]}
+[0m02:30:19.223585 [debug] [MainThread]: Flushing usage events
+[0m02:30:20.587357 [debug] [MainThread]: An error was encountered while trying to flush usage events
